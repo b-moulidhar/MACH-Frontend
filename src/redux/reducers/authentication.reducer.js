@@ -1,4 +1,4 @@
-import {SETTOKEN,SETUSER} from "../actions/action_types"
+import {SETTOKEN,SETUSER} from "../actions/actionTypes"
 const initialState = {
     token: '',
     userId: '',

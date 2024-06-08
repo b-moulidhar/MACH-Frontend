@@ -1,4 +1,4 @@
-import {SETPHNO,SETVALID} from "../actions/action_types"
+import {SETPHNO,SETVALID} from "../actions/actionTypes"
 const initialState = {
     isValid: false,
     phno: "",

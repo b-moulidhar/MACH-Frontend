@@ -1,5 +1,5 @@
 // src/redux/reducers.js
-import {CLEAR_STORE} from "../actions/action_types"
+import {CLEAR_STORE} from "../actions/actionTypes"
 
 const initialStateAuth = {
     token: '',
