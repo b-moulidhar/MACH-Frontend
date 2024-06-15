@@ -43,8 +43,8 @@ function HeaderComp(){
         <>
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
     <div className="container-fluid">
-        <NavLink end to="/homePage">
-            <button className="btn primary navBtn"><span>Home</span></button>
+        <NavLink end to="/homepage">
+            <button className="btn primary navBtn">UnPark</button>
         </NavLink>
         <button
             className="navbar-toggler"

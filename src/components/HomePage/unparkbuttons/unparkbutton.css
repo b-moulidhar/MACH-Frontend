@@ -2,19 +2,33 @@
     height: 70vh;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 .park-button,.unpark-button{
-    width: 30%;
+    cursor: pointer;
+    position: relative;
+    width: 15%;
     border: 2px solid rgb(56, 125, 227);
     border-radius: 50%;
-    height: 50%;
+    height: 40%;
     align-items: center;
     text-align: center;
+    opacity: 0.6;
+}
+.park-button{
+    background-color: red;
+    color: white;
+}
+.unpark-button{
+    background-color: green;
+    color: white;
 }
 .row{
-    margin: 50px auto;
     align-self: center;
+}
+.col{
+    position: absolute;
+    top: 25%;
 }
 @media (min-width: 200px) and (max-width: 767px) {
     .row{
@@ -23,12 +37,11 @@
     }
     .park-button,.unpark-button{
         margin: 10px;
-        height: 20%;
-        width: 50%;
+        height: 35%;
+        width: 35%;
     }
     .buttons-container{
-        height: 45vh;
-        flex-direction: column !important;
+        height: 35vh;
         justify-content: space-evenly;
     }
     h3{
@@ -36,5 +49,9 @@
     }
     strong{
         font-size: 18px;
+    }
+    .col{
+        left: 0px;
+        top: 10%;
     }
 }
