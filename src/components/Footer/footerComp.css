@@ -1,0 +1,21 @@
+footer { 
+    color: black; 
+    padding: 30px 0;
+    background-color: white;
+    border: 1px solid rgb(16, 204, 237);
+    border-radius: 4px;
+    margin: 10px;
+    padding: 10px;
+    background: linear-gradient(90deg, rgba(165, 161, 227, 1) 0%, rgba(194, 240, 227, 1) 50%, rgba(133, 213, 230, 1) 100%);
+} 
+
+.footer-links a { 
+    color: black; 
+    text-decoration: none; 
+    margin-right: 15px; 
+    transition: color 0.3s ease; 
+} 
+
+.footer-links a:hover { 
+    color: #adb5bd; 
+} 
