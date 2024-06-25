@@ -9,7 +9,7 @@ function Footer(){
                 <h2>UnPark</h2>
               </div>
               <div className="col-md-3">
-                <h5>About Us</h5>
+                <h5><a href="#">About Us</a></h5>
                 <p>
                   Lorem ipsum, dolor sit amet consectetur adipisicing elit.
                   Eaque sed hic expedita pariatur numquam, dolorem ad vitae dolorum est,

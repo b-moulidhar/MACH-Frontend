@@ -3,7 +3,8 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setUser, setToken} from "../../redux/actions/actions";
 import Swal from "sweetalert2";
-import Api from "../../api/api";
+import {Api} from "../../api/api";
+import { configdata } from "../../lib/data";
 
 
 // function Login({ history }){
