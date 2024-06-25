@@ -86,7 +86,9 @@ function register(){
   
     // console.log(finalUser,user)
     if(finalUser.name!=''){
-        axios.post("http://localhost:5000/register",finalUser)
+        axios.post("http://localhost:5250/api/auth/register",finalUser, {headers:{
+          'Content-Type': 'application/json' // Ensure this is set correctly
+        }})
         .then((res)=>{
           localStorage.setItem("user",finalUser);
             console.log(res)

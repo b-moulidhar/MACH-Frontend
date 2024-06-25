@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setUser, setToken} from "../../redux/actions/actions";
 import Swal from "sweetalert2";
+import Api from "../../api/api";
 
 
 // function Login({ history }){
@@ -12,17 +13,9 @@ function Login(){
     const mobile = useSelector(state=> state.updation.phno);
     let dispatch = useDispatch();
 const [credentials, setCredentials] = useState({email:'', pswd:''});
-    const refresh = function(){
-        axios.get("http://localhost:5000/login")
-        .then((res)=>{
-            console.log(res.data)
-        })
-    }
 
-    useEffect(()=>{
-        console.log(mobile)
-        refresh()
-    },[])
+    // useEffect(()=>{
+    // },[])
 
     function changeHandler(evt){
         setCredentials({...credentials,[evt.target.id]:evt.target.value})
@@ -30,14 +23,17 @@ const [credentials, setCredentials] = useState({email:'', pswd:''});
 
     function login(){
         localStorage.clear();
-        axios.post("http://localhost:5000/login",credentials)
+        Api.post("api/auth/login",credentials, {headers:{
+            'Content-Type': 'application/json' // Ensure this is set correctly
+          }})
         .then((res)=>{
 
+            console.log(res.data)
             dispatch(setToken(res.data.token))
             dispatch(setUser(res.data.user))
 
-            localStorage.setItem("Authorization",res.data.token);
-            localStorage.setItem("UserId",res.data.user);
+            localStorage.setItem("Authorization",res.data.result.token);
+            localStorage.setItem("Email",res.data.result.email);
             
             
             if(res.status==200){
@@ -87,12 +83,12 @@ const [credentials, setCredentials] = useState({email:'', pswd:''});
                         </div>
                         <h5 className="fw-normal mb-3 pb-3" style={{letterSpacing: 1}}>Sign into your account</h5>
                         <div className="form-outline mb-4">
-                            <input type="email" id="email" className="form-control form-control-lg" onInput={(evt)=>{changeHandler(evt)}} />
-                            <label className="form-label" htmlFor="email">Email address</label>
+                            <input type="text" id="UserName" className="form-control form-control-lg" onInput={(evt)=>{changeHandler(evt)}} />
+                            <label className="form-label" htmlFor="UserName">UserName address</label>
                         </div>
                         <div className="form-outline mb-4">
-                            <input type="password" id="pswd" className="form-control form-control-lg" onInput={(evt)=>{changeHandler(evt)}} />
-                            <label className="form-label" htmlFor="pswd">Password</label>
+                            <input type="password" id="Password" className="form-control form-control-lg" onInput={(evt)=>{changeHandler(evt)}} />
+                            <label className="form-label" htmlFor="Password">Password</label>
                         </div>
                         <div className="pt-1 mb-4">
                             <button className="btn btn-dark btn-lg btn-block" type="button" onClick={login}>Login</button>

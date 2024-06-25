@@ -2,7 +2,7 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 
 const Api = axios.create({
-  baseURL: 'http://localhost:5000/',
+  baseURL: 'http://localhost:5250/',
 });
 
 Api.interceptors.request.use(
