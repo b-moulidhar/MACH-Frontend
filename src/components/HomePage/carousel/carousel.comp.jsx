@@ -1,8 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import "./carousel.css";
-import bikeBlue from '../../../assets/images/bike_blue.jpg';
-import bikeBlue1 from '../../../assets/images/bike_blue1.jpg';
-import bikeBlue2 from '../../../assets/images/bike_blue2.jpg';
 import { Contentful } from '../../../api/api';
 
 const CarouselComp = () => {

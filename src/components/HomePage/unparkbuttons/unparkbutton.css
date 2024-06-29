@@ -4,12 +4,12 @@
     align-items: center;
     justify-content: space-evenly;
 }
-.park-button,.unpark-button{
+.park-button,.unpark-button,.repark-button{
     cursor: pointer;
     position: relative;
     width: 15%;
-    border: 2px solid rgb(56, 125, 227);
-    border-radius: 50%;
+    border: 1px solid rgb(167, 164, 164);
+    border-radius: 8px;
     height: 40%;
     align-items: center;
     text-align: center;
@@ -21,6 +21,10 @@
 }
 .unpark-button{
     background-color: green;
+    color: white;
+}
+.repark-button{
+    background-color: rgb(248, 154, 1);
     color: white;
 }
 .row{
@@ -35,7 +39,7 @@
         margin: 0px;
         align-self: center;
     }
-    .park-button,.unpark-button{
+    .park-button,.unpark-button,.repark-button{
         margin: 10px;
         height: 35%;
         width: 35%;

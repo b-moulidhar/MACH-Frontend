@@ -1,14 +1,14 @@
 import { NavLink } from "react-router-dom";
 import "./header.css"
 import Swal from 'sweetalert2'
+import unpark from "../../assets/images/unpark.png";
 import { useEffect, useState } from "react";
 function HeaderComp(){
-
-
-    const [link,setLink] = useState("")
+    const [isHovered,setIsHovered] = useState(false);
+    const [link,setLink] = useState("");
     useEffect(()=>{
         let userId = localStorage.getItem("UserId"); 
-        const profilePage = "/profileDetails/"+userId;
+        const profilePage = "/myprofile";
         setLink(profilePage);
     },[])
 
@@ -44,7 +44,7 @@ function HeaderComp(){
         <nav className="navbar navbar-expand-lg bg-body-tertiary">
     <div className="container-fluid">
         <NavLink end to="/homepage">
-            <button className="btn primary navBtn">UnPark</button>
+            <button className="btn primary navBtn"><img src={unpark} alt="" width={30} height={30} /></button>
         </NavLink>
         <button
             className="navbar-toggler"
@@ -80,12 +80,26 @@ function HeaderComp(){
                     </NavLink>
                 </li>
             </ul>
-            <button className="btn primary navBtn" onClick={logout}><span>
-                logout</span>
-            </button>
+            <div id="myProfile" onMouseEnter={()=>setIsHovered(true)} onMouseLeave={()=>setIsHovered(false)}>
+                <img src="https://www.svgrepo.com/show/512729/profile-round-1342.svg" alt="profile" width={30} height={30} />
+                {isHovered && (
+                <div className="popup">
+                    <img src="https://www.svgrepo.com/show/512729/profile-round-1342.svg" alt="profile" width={60} height={60} />
+                    <div>
+                    <NavLink end to={link}>
+                        <button className="btn primary navBtn"><span>My profile</span></button>
+                    </NavLink>
+                    <button className="btn primary navBtn" onClick={logout}><span>
+                        logout</span>
+                    </button>
+                    </div>
+                </div>
+                )}
+            </div>
         </div>
     </div>
 </nav>
+        
 
         {/* <nav className="navbar navbar-expand-lg bg-body-tertiary">
             <div className="container-fluid">

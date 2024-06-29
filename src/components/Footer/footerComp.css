@@ -1,10 +1,8 @@
 footer { 
     color: black; 
     padding: 30px 15px;
-    background-color: white;
-    border: 1px solid rgb(16, 204, 237);
-    border-radius: 4px;
-    background: linear-gradient(90deg, rgba(165, 161, 227, 1) 0%, rgba(194, 240, 227, 1) 50%, rgba(133, 213, 230, 1) 100%);
+    margin-top: 16px;
+    background: rgba(var(--bs-tertiary-bg-rgb), var(--bs-bg-opacity)) !important;
 } 
 
 .footer-links a { 
