@@ -1,0 +1,47 @@
+#profileData{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+    
+}
+#profileData>img{
+    align-items: baseline;
+    text-align: center;
+    width: 200px;
+    height: 200px;
+    border: 1px solid;
+    border-radius: 50%;
+}
+.editPopUp{
+    position: absolute;
+    top: 20%;
+    left: 35%;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    height: 150px;
+    width: 250px;
+    justify-content: space-around;
+    border:1px solid olivedrab;
+    border-radius: 12px;
+    background: rgb(165,161,227);
+    background: linear-gradient(90deg, rgba(165,161,227,1) 0%, rgba(194,240,227,1) 50%, rgba(133,213,230,1) 100%);
+    /* z-index: 10; */
+}
+
+.editPopUp div{
+    font-size: larger;
+    font-family: 'Times New Roman', Times, serif;
+    margin:5px;
+}
+.editPopUp div:hover{
+    cursor: pointer;
+}
+@media (min-width:900px){
+    .editPopUp{
+        top: 30%;
+        left: 40%;
+    }
+}
