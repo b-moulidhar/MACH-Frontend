@@ -4,6 +4,10 @@ function ReParkModal(){
             <div className="modal fade" id="ReparkModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div className="modal-dialog">
                 <div className="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Re-Parking Details</h5>
+                    <span aria-hidden="true" data-bs-toggle="modal" data-bs-target="#ReparkModal" style={{cursor:"pointer",fontSize:"42px"}}>&times;</span>
+                </div>
                 <div className="modal-body">
                         <form>
                             <div className="mb-3">

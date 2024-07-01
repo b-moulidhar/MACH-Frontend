@@ -1,10 +1,11 @@
 import axios from "axios";
 import { useState } from "react";
 import "./register.css"
+import { Api } from "../../api/api";
 
 function Register(){
 const [confPswd, setConfPswd] = useState(false);
-const [user,setUser] = useState({name :'', email:'', mobile:'', pswd:'' })
+const [user,setUser] = useState({Name :'', Email:'', UserName:'', Password:'' })
 const [finalUser, setFinalUser] = useState();
 const passwordRegex = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}$/;
 const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.(com|in|edu|co)$/i;
@@ -17,8 +18,8 @@ function changeHandler(evt){
 }
 
 function checkPswd(evt){
-    if(user.pswd == evt.target.value){
-      if(passwordRegex.test(user.pswd)){
+    if(user.Password == evt.target.value){
+      if(passwordRegex.test(user.Password)){
         console.log("good password")
         setFinalUser(user);
         regButton.disabled = false;
@@ -45,30 +46,18 @@ function emailVerify(evt){
       }
    
 }
-function emailVerify(evt){
+// function phnumVerify(evt){
     
-  let errorDisplay = document.getElementById("emailError");
-      if(emailPattern.test(evt.target.value)){
-        regButton.disabled = false;
-        errorDisplay.style.display = "none"
-      }else{
-        errorDisplay.style.display = "block"
-        regButton.disabled = true;
-      }
+//   let errorDisplay = document.getElementById("phoneError");
+//       if(phnumPattern.test(evt.target.value)){
+//         regButton.disabled = false;
+//         errorDisplay.style.display = "none"
+//       }else{
+//         errorDisplay.style.display = "block"
+//         regButton.disabled = true;
+//       }
    
-}
-function phnumVerify(evt){
-    
-  let errorDisplay = document.getElementById("phoneError");
-      if(phnumPattern.test(evt.target.value)){
-        regButton.disabled = false;
-        errorDisplay.style.display = "none"
-      }else{
-        errorDisplay.style.display = "block"
-        regButton.disabled = true;
-      }
-   
-}
+// }
 
 function pswdVerify(evt){
   let req = document.getElementsByClassName("pswdReq")[0];
@@ -84,9 +73,9 @@ function pswdVerify(evt){
 
 function register(){
   
-    // console.log(finalUser,user)
-    if(finalUser.name!=''){
-        axios.post("http://localhost:5250/api/auth/register",finalUser, {headers:{
+    console.log(finalUser,user)
+    if(finalUser.Name!=''){
+        Api.post("api/auth/register",finalUser, {headers:{
           'Content-Type': 'application/json' // Ensure this is set correctly
         }})
         .then((res)=>{
@@ -113,7 +102,7 @@ function register(){
 }
     return (
       <>
-        <section className="vh-100" style={{ backgroundColor: "#eee" }}>
+        <section className="vh-100" style={{ backgroundColor: "#456c9e"}}>
           <div className="container h-100">
             <div className="row d-flex justify-content-center align-items-center h-100">
               <div className="col-lg-12 col-xl-11">
@@ -130,15 +119,16 @@ function register(){
                             <div className="form-outline flex-fill mb-0">
                               <input
                                 type="text"
-                                id="name"
+                                id="Name"
                                 className="form-control"
+                                required
                                 onInput={(evt)=>{changeHandler(evt)}}
                               />
                               <label
                                 className="form-label"
-                                htmlFor="name"
+                                htmlFor="Name"
                               >
-                                Your Name
+                                Your Name *
                               </label>
                             </div>
                           </div>
@@ -147,16 +137,17 @@ function register(){
                             <div className="form-outline flex-fill mb-0">
                               <input
                                 type="email"
-                                id="email"
+                                id="Email"
                                 className="form-control"
+                                required
                                 onInput={(evt)=>{changeHandler(evt)}}
                                 onBlur={(evt)=>{emailVerify(evt)}}
                               />
                               <label
                                 className="form-label"
-                                htmlFor="email"
+                                htmlFor="Email"
                               >
-                                Your Email
+                                Your Email *
                               </label>
                               <p id="emailError" style={{display:"none",color:"red"}}>*not a valid email</p>
                             </div>
@@ -165,17 +156,17 @@ function register(){
                             <i className="fas fa-envelope fa-lg me-3 fa-fw" />
                             <div className="form-outline flex-fill mb-0">
                               <input
-                                type="number"
-                                id="mobile"
+                                type="text"
+                                id="UserName"
                                 className="form-control"
                                 onInput={(evt)=>{changeHandler(evt)}}
-                                onChange={(evt)=>{phnumVerify(evt)}}
+                                required
                               />
                               <label
                                 className="form-label"
-                                htmlFor="mobile"
+                                htmlFor="UserName"
                               >
-                                Your phone number
+                                User Name *
                               </label>
                               <p id="phoneError" style={{display:"none",color:"red"}}>*not a valid phone number</p>
                             </div>
@@ -185,16 +176,16 @@ function register(){
                             <div className="form-outline flex-fill mb-0">
                               <input
                                 type="password"
-                                id="pswd"
+                                id="Password"
                                 className="form-control"
                                 onInput={(evt)=>{changeHandler(evt)}}
                                 onChange={(evt)=>{pswdVerify(evt)}}
                               />
                               <label
                                 className="form-label"
-                                htmlFor="pswd"
+                                htmlFor="Password"
                               >
-                                Password
+                                Password *
                               </label>
                               <p className="pswdReq" style={{display:"none"}}>
                               <p>* must have atleast 8 characters <br />
@@ -216,7 +207,6 @@ function register(){
                               <label
                                 className="form-label"
                                 htmlFor="confPswd"
-                               
                               >
                                 Repeat your password
                               </label>

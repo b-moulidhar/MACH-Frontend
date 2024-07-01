@@ -14,4 +14,12 @@ footer {
 
 .footer-links a:hover { 
     color: #adb5bd; 
-} 
+}
+.list-inline-item a img{
+    height: 30px;
+    width: 30px;
+}
+.container .row h2 img{
+    height: 80px;
+    width: 150px;
+}
