@@ -11,10 +11,10 @@ function Footer(){
                 <h2><img src={unpark} alt="unpark"/></h2>
               </div>
               <div className="col-md-3">
-                <h5><a href="#">About Us</a></h5>
+                <h5><a href="/about-us">About Us</a></h5>
                 <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Eaque sed hic expedita pariatur numquam, dolorem ad vitae dolorum est.
+                Our Story UnPark was born out of a desire to unclog city streets and provide 
+                an eco-friendly alternative. 
                 </p>
               </div>
               <div className="col-md-3">
@@ -29,18 +29,18 @@ function Footer(){
                 <h5>Follow Us</h5>
                 <ul className="list-inline footer-links">
                   <li className="list-inline-item">
-                    <a href="#">
+                    <a href="https://www.instagram.com/valtech_global/?hl=en" target="_blank">
                       <img src="https://www.svgrepo.com/show/521711/instagram.svg" alt="instagram" />
                     </a>
                   </li>
                   <li className="list-inline-item">
-                    <a href="#">
+                    <a href="https://www.facebook.com/valtech.india/" target="_blank">
                       <img src="https://www.svgrepo.com/show/473600/facebook.svg" alt="facebook"/>
                     </a>
                   </li>
                   <li className="list-inline-item">
-                    <a href="#">
-                      <img src="https://www.svgrepo.com/svg/513089/youtube-168" alt="youtube" />
+                    <a href="https://www.youtube.com/c/ValtechOfficial" target="_blank">
+                      <img src="https://www.svgrepo.com/show/513089/youtube-168.svg" alt="youtube" />
                     </a>
                   </li>
                   <li className="list-inline-item">
