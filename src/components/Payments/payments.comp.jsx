@@ -1,6 +1,7 @@
 import Footer from "../Footer/footer.comp";
 import HeaderComp from "../Header/header.comp";
 import React, { useEffect, useState } from 'react';
+import "./paymentsPage.css"
 
 
 
@@ -10,8 +11,9 @@ const PaymentPage = () => {
         
         <>
         <HeaderComp/>
-          
-         <h1>payments page</h1>
+        <div className='payments-container'>
+         <h1>Payments page</h1>
+        </div>
           <Footer/>
         </>
         
