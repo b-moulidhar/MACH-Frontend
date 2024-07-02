@@ -29,18 +29,18 @@ function Footer(){
                 <h5>Follow Us</h5>
                 <ul className="list-inline footer-links">
                   <li className="list-inline-item">
-                    <a href="#">
+                    <a href="https://www.instagram.com/valtech_global/?hl=en" target="_blank">
                       <img src="https://www.svgrepo.com/show/521711/instagram.svg" alt="instagram" />
                     </a>
                   </li>
                   <li className="list-inline-item">
-                    <a href="#">
+                    <a href="https://www.facebook.com/valtech.india/" target="_blank">
                       <img src="https://www.svgrepo.com/show/473600/facebook.svg" alt="facebook"/>
                     </a>
                   </li>
                   <li className="list-inline-item">
-                    <a href="#">
-                      <img src="https://www.svgrepo.com/svg/513089/youtube-168" alt="youtube" />
+                    <a href="https://www.youtube.com/c/ValtechOfficial" target="_blank">
+                      <img src="https://www.svgrepo.com/show/513089/youtube-168.svg" alt="youtube" />
                     </a>
                   </li>
                   <li className="list-inline-item">

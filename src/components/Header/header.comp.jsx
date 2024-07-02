@@ -59,24 +59,30 @@ function HeaderComp(){
         </button>
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+              
                 <li className="nav-item">
-                    <NavLink end to="/homePage/uploads">
-                        <button className="btn primary navBtn"><span>view uploads</span> </button>
+                    <NavLink end to="/homePage">
+                        <button className="btn primary navBtn" data-bs-toggle="modal" data-bs-target="#parkModal" ><span>Park</span></button>
                     </NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink end to="/homePage/userImages">
-                        <button className="btn primary navBtn"><span>upload a image</span></button>
+                    <NavLink end to="/homePage">
+                        <button className="btn primary navBtn"><span>Unpark</span></button>
                     </NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink end to={link}>
-                        <button className="btn primary navBtn"><span>profile</span></button>
+                    <NavLink end to="/homePage">
+                        <button className="btn primary navBtn" data-bs-toggle="modal" data-bs-target="#ReparkModal"><span>Repark</span></button>
                     </NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink end to="/homepage/voiceSearch">
-                        <button className="btn primary navBtn"><span>voice search</span></button>
+                    <NavLink end to="/paymentdetails">
+                        <button className="btn primary navBtn"><span>Payments</span></button>
+                    </NavLink>
+                </li>
+                <li className="nav-item">
+                    <NavLink end to="/about-us">
+                        <button className="btn primary navBtn"><span>About Us</span> </button>
                     </NavLink>
                 </li>
             </ul>
