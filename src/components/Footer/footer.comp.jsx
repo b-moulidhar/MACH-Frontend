@@ -11,10 +11,10 @@ function Footer(){
                 <h2><img src={unpark} alt="unpark"/></h2>
               </div>
               <div className="col-md-3">
-                <h5><a href="#">About Us</a></h5>
+                <h5><a href="/about-us">About Us</a></h5>
                 <p>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Eaque sed hic expedita pariatur numquam, dolorem ad vitae dolorum est.
+                Our Story UnPark was born out of a desire to unclog city streets and provide 
+                an eco-friendly alternative. 
                 </p>
               </div>
               <div className="col-md-3">
