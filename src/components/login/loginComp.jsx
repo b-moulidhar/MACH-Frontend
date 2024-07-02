@@ -37,6 +37,7 @@ const [credentials, setCredentials] = useState({email:'', pswd:''});
 
             localStorage.setItem("Authorization",res.data.result.token);
             localStorage.setItem("Email",res.data.result.email);
+            localStorage.setItem("UserId",res.data.result.applicationUserId);
             
             
             if(res.status==200){
