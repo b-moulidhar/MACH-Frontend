@@ -9,8 +9,8 @@
 #profileData>img{
     align-items: baseline;
     text-align: center;
-    width: 200px;
-    height: 200px;
+    width: 100px;
+    height: 100px;
     border: 1px solid;
     border-radius: 50%;
 }

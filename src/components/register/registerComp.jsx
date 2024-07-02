@@ -74,18 +74,18 @@ function pswdVerify(evt){
 function register(){
   
     console.log(finalUser,user)
-    if(finalUser.Name!=''){
-        Api.post("api/auth/register",finalUser, {headers:{
+    if(user.Name!=''){
+        Api.post("api/auth/register",user, {headers:{
           'Content-Type': 'application/json' // Ensure this is set correctly
         }})
         .then((res)=>{
           localStorage.setItem("user",finalUser);
             console.log(res)
-            if(res.status==201){
+            if(res.status==200){
                 alert("Resgistered successfully");
                 window.location.href = "/"
                 // window.location.href = "/";
-            }else if(res.status == 500){
+            }else if(res.status == 400){
                 alert("email already exits");
             }
             else{
