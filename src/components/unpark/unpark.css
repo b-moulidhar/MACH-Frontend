@@ -1,0 +1,7 @@
+.unpark-container h3{
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

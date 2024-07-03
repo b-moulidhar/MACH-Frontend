@@ -1,0 +1,32 @@
+.ais-SearchBox{
+    border: 1px solid rgb(28, 186, 238);
+    border-radius: 4px;
+    min-height: 34px;
+    padding: 10px;
+    height: auto;
+    width: 30%;
+}
+.ais-Hits{
+    display: block;
+}
+div{
+    font-size: 14px;
+}
+.ais-SearchBox-submit{
+    float: right;
+    background-color: transparent;
+    border: none;
+}
+.ais-SearchBox-reset{
+    display: none;
+    background-color: transparent;
+    border: none;
+}
+.ais-SearchBox-input{
+    width: 90%;
+    border: none;
+    border-radius: 4px;
+}
+.ais-SearchBox-input:focus-visible{
+    outline: none;
+}
