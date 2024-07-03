@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState } from "react";
 import "./register.css"
 import { Api } from "../../api/api";
+import Swal from "sweetalert2";
 
 function Register(){
 const [confPswd, setConfPswd] = useState(false);
@@ -82,10 +83,18 @@ function register(){
           localStorage.setItem("user",finalUser);
             console.log(res)
             if(res.status==200){
-                alert("Resgistered successfully");
-                window.location.href = "/"
-                // window.location.href = "/";
-            }else if(res.status == 400){
+              Swal.fire({
+                  position: 'top',
+                  icon: 'success',
+                  title: "Registered Successfully",
+                  showConfirmButton: false,
+                  timer: 1000
+                }).then(()=>{
+                  debugger;
+                    window.location.href ="/"
+                })
+          // history.push("/uploadImage");
+          }else if(res.status == 400){
                 alert("email already exits");
             }
             else{
