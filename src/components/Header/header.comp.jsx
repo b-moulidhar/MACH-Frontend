@@ -3,6 +3,8 @@ import "./header.css"
 import Swal from 'sweetalert2'
 import unpark from "../../assets/images/unpark.png";
 import { useEffect, useState } from "react";
+import ParkModal from "../Modal/park.modal";
+import ReParkModal from "../Modal/repark.modal";
 function HeaderComp(){
     const [isHovered,setIsHovered] = useState(false);
     const [link,setLink] = useState("");
@@ -61,17 +63,17 @@ function HeaderComp(){
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               
                 <li className="nav-item">
-                    <NavLink end to="/homePage">
+                    <NavLink >
                         <button className="btn primary navBtn" data-bs-toggle="modal" data-bs-target="#parkModal" ><span>Park</span></button>
                     </NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink end to="/homePage">
+                    <NavLink >
                         <button className="btn primary navBtn"><span>Unpark</span></button>
                     </NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink end to="/homePage">
+                    <NavLink >
                         <button className="btn primary navBtn" data-bs-toggle="modal" data-bs-target="#ReparkModal"><span>Repark</span></button>
                     </NavLink>
                 </li>
@@ -130,6 +132,8 @@ function HeaderComp(){
                 </div>
             </div>
         </nav> */}
+           <ParkModal/>
+           <ReParkModal/>
 
         </>
     )

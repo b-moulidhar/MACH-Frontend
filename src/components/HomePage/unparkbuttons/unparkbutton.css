@@ -54,9 +54,12 @@
     }
     h3{
         font-size: 16px;
+        font-family: FuturaPT-Demi, sans-serif;
+        
     }
     strong{
         font-size: 18px;
+        font-family: FuturaPT-Demi, sans-serif;
     }
     .col{
         left: 0px;

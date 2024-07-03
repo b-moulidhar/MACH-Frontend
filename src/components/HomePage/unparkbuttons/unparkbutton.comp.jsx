@@ -9,8 +9,8 @@ function UnParkButtonComp(){
             <button class="park-button" data-bs-toggle="modal" data-bs-target="#parkModal" >
             <div class="row">
                 <div class="col">
-                <strong class="">Park</strong>
-                <h3 class="mb-0">explore parking</h3>
+                <h3 class="">Park</h3>
+                <strong class="mb-0">Explore parking</strong>
                 </div>
                 
             </div>
@@ -19,8 +19,8 @@ function UnParkButtonComp(){
             <NavLink end to="/unpark">
             <div class="row">
                 <div class="col">
-                <strong class="">UnPark</strong>
-                <h3 class="mb-0">explore unparking</h3>
+                <h3 class="">UnPark</h3>
+                <strong class="mb-0">Explore unparking</strong>
                 
                 </div>
                 
@@ -30,8 +30,8 @@ function UnParkButtonComp(){
             <button class="repark-button" data-bs-toggle="modal" data-bs-target="#ReparkModal">
             <div class="row">
                 <div class="col">
-                <strong class="">Re-park</strong>
-                <h3 class="mb-0">explore reparking</h3>
+                <h3 class="">Re-park</h3>
+                <strong class="mb-0">Explore reparking</strong>
                 
                 </div>
                 
