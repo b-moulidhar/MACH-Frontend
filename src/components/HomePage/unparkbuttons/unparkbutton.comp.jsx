@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import ParkModal from "../../Modal/park.modal";
 import ReParkModal from "../../Modal/repark.modal";
 import "./unparkbutton.css"
@@ -15,6 +16,7 @@ function UnParkButtonComp(){
             </div>
             </button>
             <button class="unpark-button"  >
+            <NavLink end to="/unpark">
             <div class="row">
                 <div class="col">
                 <strong class="">UnPark</strong>
@@ -23,6 +25,7 @@ function UnParkButtonComp(){
                 </div>
                 
             </div>
+            </NavLink>
             </button>
             <button class="repark-button" data-bs-toggle="modal" data-bs-target="#ReparkModal">
             <div class="row">
