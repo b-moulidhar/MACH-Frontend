@@ -44,7 +44,7 @@ const [credentials, setCredentials] = useState({email:'', pswd:''});
                 Swal.fire({
                     position: 'top',
                     icon: 'success',
-                    title: res.data.message,
+                    title: "Login Successful",
                     showConfirmButton: false,
                     timer: 1000
                   }).then(()=>{
