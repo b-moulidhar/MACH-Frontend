@@ -7,9 +7,7 @@ function UnParkComp(){
     return(
         <>  <HeaderComp/>
             <div className="unpark-container">
-               <h3><Search/></h3>
-               <hr />
-               <CardsComp/>
+               <Search/>
             </div>
             <Footer/>
         </>
