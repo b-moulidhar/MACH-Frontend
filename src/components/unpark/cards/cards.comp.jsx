@@ -1,60 +1,27 @@
 import './cardsComp.css'
 import bike from "../../../assets/images/bike_blue1.jpg"
-function CardsComp(){
+function CardsComp(props){
     return (
         <>
         <div className="container">    
           <div className="allUserUploads">
-            
-              <div key={0} className="uploads">
+            {
+            props.searchResults.map((data,idx) => {
+                return(
+              <div key={idx} className="uploads">
                 <span className='available'>available </span>
                 <span className='notAvailable'>available </span>
                 <img src={bike} />
-                <p><span>address:</span> </p>
-                <p><span>vehicle no:</span></p> 
-                <p><span>price: </span> <span>/hr</span></p> 
+                <p><span>address:</span>{data.location} </p>
+                <p><span>vehicle no:</span>{data.vehicleRNumber}</p> 
+                <p><span>price: </span>₹{data.pricePerHour}<span>/hr</span></p> 
                 <button className="RentNow">Rent Now</button>
               </div>
+                )
+              })
+}
 
-              <div key={1} className="uploads">
-                <span className='available'>available </span>
-                <span className='notAvailable'>available </span>
-                <img src={bike} />
-                <p><span>address:</span> </p>
-                <p><span>vehicle no:</span></p> 
-                <p><span>price: </span> <span>/hr</span></p> 
-                <button className="RentNow">Rent Now</button>
-              </div>
-
-              <div key={2} className="uploads">
-                <span className='available'>available </span>
-                <span className='notAvailable'>available </span>
-                <img src={bike} />
-                <p><span>address:</span> </p>
-                <p><span>vehicle no:</span></p> 
-                <p><span>price: </span> <span>/hr</span></p> 
-                <button className="RentNow">Rent Now</button>
-              </div>
-
-              <div key={2} className="uploads">
-                <span className='available'>available </span>
-                <span className='notAvailable'>available </span>
-                <img src={bike} />
-                <p><span>address:</span> </p>
-                <p><span>vehicle no:</span></p> 
-                <p><span>price: </span> <span>/hr</span></p> 
-                <button className="RentNow">Rent Now</button>
-              </div>
-
-              <div key={2} className="uploads">
-                <span className='available'>available </span>
-                <span className='notAvailable'>available </span>
-                <img src={bike} />
-                <p><span>address:</span> </p>
-                <p><span>vehicle no:</span></p> 
-                <p><span>price: </span> <span>/hr</span></p> 
-                <button className="RentNow">Rent Now</button>
-              </div>
+              
           </div>
         </div>
         </>
