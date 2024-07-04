@@ -68,7 +68,7 @@ function HeaderComp(){
                     </NavLink>
                 </li>
                 <li className="nav-item">
-                    <NavLink >
+                    <NavLink end to="/unpark">
                         <button className="btn primary navBtn"><span>Unpark</span></button>
                     </NavLink>
                 </li>

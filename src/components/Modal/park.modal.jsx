@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Api } from "../../api/api";
+import Swal from "sweetalert2";
    
 
 function ParkModal(){
@@ -20,29 +21,30 @@ function ParkModal(){
             [e.target.id]: e.target.value
         });
     };
-
     const handleFileChange = (e) => {
-        console.log(e.target.files[0]);
-        setFormData({
-            ...formData,
-            VehicleImage: e.target.files[0]
-            
-        });
-        
+      setFormData({ ...formData,
+        VehicleImage: e.target.files[0] });
     };
-  
-
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
             const response = await Api.post('/api/park/createpark', formData, {  
-            headers:
-            {
-                'Content-Type': 'multipart/form-data'
-            }
-                
+            headers: {
+                    'Content-Type': 'multipart/form-data'
+                     },
             });
-            console.log('Park created', response.data);
+            if(response.status==201){
+                Swal.fire({
+                    position: 'top',
+                    icon: 'success',
+                    title: "Parking Done",
+                    showConfirmButton: false,
+                    timer: 1000
+                  }).then(()=>{
+                    debugger;
+                      window.location.href ="/homepage"
+                  })
+                }
         } catch (error) {
             console.error('There was an error creating the park!', error);
         }

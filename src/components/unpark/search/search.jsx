@@ -5,7 +5,7 @@ import "./search.css"
 
 const Search = () => {
   const [query, setQuery] = useState('');
-  const searchClient = algoliasearch('VKKDDBXZ47', '3e3b01c30cc88c90a3aef2da57c66217');
+  const searchClient = algoliasearch('DTP3K3QPGJ', '40213dc9f23caddecdd5cdf5e28dcf14');
  
 const Hit = ({ hit }) => {
   return (
