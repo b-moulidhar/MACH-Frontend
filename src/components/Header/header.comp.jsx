@@ -79,7 +79,7 @@ function HeaderComp(){
                 </li>
                 <li className="nav-item">
                     <NavLink end to="/paymentdetails">
-                        <button className="btn primary navBtn"><span>Payments</span></button>
+                        <button className="btn primary navBtn"><span>My Rentals</span></button>
                     </NavLink>
                 </li>
                 <li className="nav-item">
