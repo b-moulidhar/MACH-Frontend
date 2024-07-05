@@ -23,6 +23,10 @@ function Rental(props) {
           setOptions(res.data);
           setPayment(false);
           console.log(res.data.clientSecret);
+          const optionsEncoded = encodeURIComponent(JSON.stringify(res.data));
+        
+          window.location.href = `/externalpayment?options=${optionsEncoded}`;
+          
         }
       })
       .catch((err) => {
@@ -78,13 +82,6 @@ function Rental(props) {
               </div>
             </div>
           </div>
-        </div>
-      )}
-      {!payment && (
-        <div id="checkout">
-          <EmbeddedCheckoutProvider stripe={stripePromise} options={options}>
-            <EmbeddedCheckout />
-          </EmbeddedCheckoutProvider>
         </div>
       )}
     </>
