@@ -1,8 +1,10 @@
 footer { 
+    display: flex;
     color: black; 
     padding: 30px 15px;
     margin-top: 16px;
     background: rgba(var(--bs-tertiary-bg-rgb), var(--bs-bg-opacity)) !important;
+    align-items: baseline;
 } 
 
 .footer-links a { 

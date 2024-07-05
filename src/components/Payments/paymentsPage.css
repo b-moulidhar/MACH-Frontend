@@ -1,6 +1,37 @@
-.payments-container h1{
+.payments-container h1,h2{
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
+}
+.payments-container h2{
+    color: rgb(156, 20, 20);
+}
+.allUserUploads{
+    gap: 0.6rem;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.uploads{
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+    background: rgb(208, 234, 234);
+    /* background: linear-gradient(90deg, rgba(215,242,233,1) 6%, rgba(215,215,242,1) 47%, rgba(192,236,245,1) 100%); */
+    border-radius: 4px;
+    padding: 10px;
+    text-align: left;
+    min-width: 40%;
+    align-items: center;
+}
+
+.uploads p{
+    width: 100%;
+    text-align: left;
+}
+
+.uploads:hover{
+    transform: scale(0.95);
+    transition: 0.5s;
 }
