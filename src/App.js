@@ -8,6 +8,8 @@ let AboutUsPage=React.lazy(()=>import('./components/AboutUs/aboutuspage.comp'))
 let PaymentsPage=React.lazy(()=>import('./components/Payments/payments.comp'))
 let UnParkComp=React.lazy(()=>import('./components/unpark/unpark.comp'))
 let ProfileComp=React.lazy(()=>import('./components/MyProfile/myprofile.comp'))
+let ExternalPayments=React.lazy(()=>import('./components/PaymentExternal/externalpayments.comp'))
+let Return=React.lazy(()=>import('./components/PaymentExternal/returnpayments.comp'))
 function App() {
   return<>
       <BrowserRouter>
@@ -19,6 +21,8 @@ function App() {
                 <Route path="about-us"  element={<Suspense fallback={<> loading...</>}><AboutUsPage/> </Suspense> }/>
                 <Route path="paymentdetails" element={<Suspense fallback={<>loading...</>}><PaymentsPage/></Suspense>}/>
                 <Route path="unpark" element={<Suspense fallback={<>loading...</>}><UnParkComp/></Suspense>}/>
+                <Route path="externalpayment" element={<Suspense fallback={<>loading...</>}><ExternalPayments/></Suspense>}/>
+                <Route path="return" element={<Suspense fallback={<>loading...</>}><Return/></Suspense>}/>
             </Routes>
         </BrowserRouter>
   </>
