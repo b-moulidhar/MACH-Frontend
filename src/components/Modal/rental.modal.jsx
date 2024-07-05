@@ -41,20 +41,23 @@ function Rental(props) {
         ...prevUser,
         value: finalAmount,
         UserId: localStorage.getItem("UserId"),
-        vehiclenumber: props.data.vehicleRNumber,
-        vehicleownerId: 2
+        vehiclenumber: props.data.vehicleNumber,
+        vehicleownerId: props.data.applicationUserId
       }));
+      console.log(props);
+      localStorage.setItem("user",JSON.stringify(props.data));
+      localStorage.setItem("finalamount",finalAmount)
     }
   }, [finalAmount]);
 
   useEffect(() => {
     if (props.data) {
-      console.log(props.data.vehicleRNumber);
+      console.log(props.data.vehicleNumber);
       setUser({
         value: finalAmount,
         UserId: localStorage.getItem("UserId"),
-        vehiclenumber: props.data.vehicleRNumber,
-        vehicleownerId: 2
+        vehiclenumber: props.data.vehicleNumber,
+        vehicleownerId: props.data.applicationUserId
       });
     }
   }, [props.data]);
