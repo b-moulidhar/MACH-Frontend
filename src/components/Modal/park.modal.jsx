@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Api } from "../../api/api";
 import Swal from "sweetalert2";
+import { Navigate } from 'react-router-dom';
 
 function ParkModal(){
     const [preview, setPreview] = useState(null);
@@ -52,8 +53,9 @@ function ParkModal(){
                     timer: 1000
                   }).then(()=>{
                     //console.log(token);
-                    debugger;
-                      window.location.href ="/homePage"
+                      
+                        <Navigate to='/homePage'/>
+                      
                   })
             // history.push("/uploadImage");
             }

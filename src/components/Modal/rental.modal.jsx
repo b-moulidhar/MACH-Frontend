@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { loadStripe } from '@stripe/stripe-js';
-import { EmbeddedCheckoutProvider, EmbeddedCheckout } from '@stripe/react-stripe-js';
 import { Api } from '../../api/api';
+import { Navigate } from 'react-router-dom';
 
 function Rental(props) {
   const stripePromise = loadStripe('pk_test_51PKxtiSGyaisjdTZWhAP1IhD2hWqUTCcRcuapvy9Ht9BOJyRUFMwJe9pBXulgaVk8Cm30GgnB2QYiBpbq2aBDXO100ntkrts0v');
@@ -25,7 +25,7 @@ function Rental(props) {
           console.log(res.data.clientSecret);
           const optionsEncoded = encodeURIComponent(JSON.stringify(res.data));
         
-          window.location.href = `/externalpayment?options=${optionsEncoded}`;
+          <Navigate to={"/externalpayment?options="+{optionsEncoded}}/>
           
         }
       })

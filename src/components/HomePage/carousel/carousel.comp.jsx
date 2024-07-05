@@ -56,8 +56,6 @@ const CarouselComp = () => {
           <img src={bannerData.banner1[0].url} alt='image'/>
           <div className="container">
             <div className="carousel-caption text-start">
-              <h1>Example headline.</h1>
-              <p className="opacity-75">Some representative placeholder content for the first slide of the carousel.</p>
               <p><a className="btn btn-lg btn-primary" href={bannerData.link2}>Explore more</a></p>
             </div>
           </div>
@@ -66,8 +64,6 @@ const CarouselComp = () => {
         <img src={bannerData.banner2[0].url} alt='image1'/>
           <div className="container">
             <div className="carousel-caption">
-              <h1>Another example headline.</h1>
-              <p>Some representative placeholder content for the second slide of the carousel.</p>
               <p><a className="btn btn-lg btn-primary" href={bannerData.link2}>Learn more</a></p>
             </div>
           </div>
@@ -76,8 +72,6 @@ const CarouselComp = () => {
         <img src={bannerData.banner3[0].url} alt='image2' />
           <div className="container">
             <div className="carousel-caption text-end">
-              <h1>One more for good measure.</h1>
-              <p>Some representative placeholder content for the third slide of this carousel.</p>
               <p><a className="btn btn-lg btn-primary" href={bannerData.link3}>Browse gallery</a></p>
             </div>
           </div>

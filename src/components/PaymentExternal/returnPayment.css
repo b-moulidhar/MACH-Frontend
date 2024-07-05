@@ -1,0 +1,17 @@
+.container-return h3,h4,h5{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(81, 235, 51);
+}
+
+.container-return a{
+    text-decoration: none;
+    width: 20%;
+    border: 1px solid rgb(186, 25, 25);
+    border-radius: 4px;
+    text-align: center;
+}
+.navBtn{
+    color: rgb(186, 25, 25);
+}
