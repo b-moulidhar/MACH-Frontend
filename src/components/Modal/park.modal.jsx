@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Api } from "../../api/api";
-   
+import Swal from "sweetalert2";
 
 function ParkModal(){
     const [preview, setPreview] = useState(null);
@@ -12,7 +12,8 @@ function ParkModal(){
         Address: '',
         AvailableHours: 0,
         ExpectedReturnTime: '',
-        VehicleImage: null
+        VehicleImage: null,
+        PricePerHour:"1"
     });
     const handleChange = (e) => {      
         setFormData({
@@ -42,6 +43,20 @@ function ParkModal(){
             }
                 
             });
+            if(response.status==200||response.status==201){
+                Swal.fire({
+                    position: 'top',
+                    icon: 'success',
+                    title: "Parked Successfully",
+                    showConfirmButton: false,
+                    timer: 1000
+                  }).then(()=>{
+                    //console.log(token);
+                    debugger;
+                      window.location.href ="/homePage"
+                  })
+            // history.push("/uploadImage");
+            }
             console.log('Park created', response.data);
         } catch (error) {
             console.error('There was an error creating the park!', error);
@@ -76,6 +91,10 @@ function ParkModal(){
                             <div className="mb-3">
                                 <label htmlFor="AvailableHours" className="form-label">available hours</label>
                                 <input type="number" className="form-control" min="0" max="8" step="0.5" id="AvailableHours" onChange={handleChange}  required/>
+                            </div>
+                            <div className="mb-3">
+                                <label htmlFor="PricePerHour" className="form-label">Price per hour</label>
+                                <input type="number" className="form-control" min="0" max="200"  id="PricePerHour" onChange={handleChange}  required/>
                             </div>
                             <div className="mb-3">
                                 <label htmlFor="ExpectedReturnTime" className="form-label">Expected Return time</label>
