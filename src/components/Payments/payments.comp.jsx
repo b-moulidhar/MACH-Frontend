@@ -27,7 +27,7 @@ const PaymentPage = () => {
         <>
         <HeaderComp/>
         <div className='payments-container'>
-         <h1>Rentals</h1>
+         <h1>My Rentals</h1>
          <hr />
          {
           paymentData.length>0 ?
