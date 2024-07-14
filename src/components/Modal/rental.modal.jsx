@@ -9,8 +9,16 @@ function Rental(props) {
   const [options, setOptions] = useState(null);
   const [user, setUser] = useState({ value: '', UserId: '', vehiclenumber: '', vehicleownerId: '' });
   const [finalAmount, setFinalAmount] = useState(null);
+  const [maxAmount,setMaxAmount]=useState(1);
+  
 
   function finalAmountCalc(e) {
+    const maxAmoun=(props.data.pricePerHour)*(props.data.availableHours);
+    setMaxAmount(maxAmoun);
+    if(e.target.value>props.data.availableHours)
+    { 
+      window.alert(`please enter the required hours in available range`)
+    }
     const amount = (props.data.pricePerHour) * (e.target.value);
     setFinalAmount(amount);
   }
@@ -25,7 +33,8 @@ function Rental(props) {
           console.log(res.data.clientSecret);
           const optionsEncoded = encodeURIComponent(JSON.stringify(res.data));
         
-          <Navigate to={"/externalpayment?options="+{optionsEncoded}}/>
+          //<Navigate to={"/externalpayment?options="+{optionsEncoded}}/>
+           window.location.href =`/externalpayment?options=${optionsEncoded}`
           
         }
       })
@@ -78,7 +87,7 @@ function Rental(props) {
                     <label htmlFor="numhrsreq" className="form-label">No. of Hours required</label>
                     <input onChange={(evt) => finalAmountCalc(evt)} type="number" className="form-control" id="numhrsreq" required />
                   </div>
-                  <button type="button" className="btn btn-primary" disabled={finalAmount === null || finalAmount === 0} onClick={makePayment}>
+                  <button type="button" className="btn btn-primary" disabled={finalAmount === null || finalAmount === 0||finalAmount>maxAmount || finalAmount<=0} onClick={makePayment}>
                     Pay <span>₹{finalAmount}</span>
                   </button>
                 </form>

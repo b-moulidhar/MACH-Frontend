@@ -15,14 +15,15 @@ function CardsComp(props) {
       <div className="allUserUploads">
         {props.searchResults.map((data, idx) => (
           <div key={idx} className="uploads">
-            <span className='available'>available </span>
-            <span className='notAvailable'>available </span>
+            {data.flag === 0|| data.flag === null ? (<span className='available'>available</span>) 
+            : (<span className='notAvailable'>Rented Out</span>)}
             <img src={bike} alt="bike" />
             <p><span>vehicle no:</span>{data.vehicleNumber}</p> 
             <p><span>address:</span>{data.location}</p>
             <p><span>price per Hour: </span>₹{data.pricePerHour}<span>/hr</span></p>
             <p><span>Available Hours:</span>{data.availableHours}hours</p>
-            <button className="RentNow" data-bs-toggle="modal" onClick={() => handleRentNowClick(data)} data-bs-target="#RentalModal">Rent Now</button>
+            {/* <p><span>flag:</span>{data.flag}</p> */}
+            <button className="RentNow" data-bs-toggle="modal" disabled={data.flag !== 0}  onClick={() => handleRentNowClick(data)} data-bs-target="#RentalModal" >Rent Now</button>
           </div>
         ))}
         <Rental data={rentalData} /> {/* Render Rental component with rentalData */}

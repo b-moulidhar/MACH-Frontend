@@ -53,10 +53,10 @@ function Footer(){
             </div>
             <hr />
             <div className="row">
-              <div className="col-md-6">
+              <div className="col-md">
                 <p>© 2024 Un-Park. All rights reserved.</p>
               </div>
-              <div className="col-md-6 text-end">
+              {/* <div className="col-md-6 text-end">
                 <ul className="list-inline footer-links">
                   <li className="list-inline-item">
                     <a href="#">Privacy Policy</a>
@@ -68,7 +68,7 @@ function Footer(){
                     <a href="#">Sitemap</a>
                   </li>
                 </ul>
-              </div>
+              </div> */}
             </div>
           </div>
         </footer>

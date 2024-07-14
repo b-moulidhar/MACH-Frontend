@@ -8,9 +8,9 @@ import { Api } from "../../api/api";
 
 const PaymentPage = () => {
   const [paymentData,setPaymentData] = useState([]);
-  const userId = localStorage.getItem('UserId');
+  const userId = String(localStorage.getItem('UserId'));
   function getPaymentDetails(){
-    Api.get('api/rental/getrentaldetailsbyuserid/'+{userId})
+    Api.get('api/rental/getrentaldetailsbyuserid/'+userId)
     .then((res)=>{
         setPaymentData(res.data)
     })
@@ -35,10 +35,10 @@ const PaymentPage = () => {
          {paymentData.map((data, idx) => (
           <div key={idx} className="uploads">
             <p><span>Rental Id:</span>{data.rentalId}</p> 
-            <p><span>Vehicle no</span>{data.vehicleRNumber}</p>
+            <p><span>Vehicle No:</span>{data.vehicleRNumber}</p>
             <p><span>Rented date:</span>{data.rentedDate}</p> 
             <p><span>Duration:</span>{data.duration}</p>
-            <p><span>Total Amount:</span>{data.totalAmount}</p> 
+            <p><span>Total Amount:₹</span>{data.totalAmount}</p> 
             <p><span>Payment Id:</span>{data.paymentId}</p>
             <p><span>Rented Location:</span>{data.rentingLocation}</p>
           </div>
