@@ -2,7 +2,7 @@ import axios from 'axios';
 import Swal from 'sweetalert2';
 import { configdata } from '../lib/data';
 const Api = axios.create({
-  baseURL: 'https://unpark.azurewebsites.net/',
+  baseURL: 'http://localhost:8000',
 });
 
 const Contentful = axios.create({

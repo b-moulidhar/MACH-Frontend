@@ -7,11 +7,12 @@ import CardsComp from '../cards/cards.comp';
 const searchClient = algoliasearch('DTP3K3QPGJ', '40213dc9f23caddecdd5cdf5e28dcf14');
 
 const Hit = ({ hit }) => (
-  <article>
-    {hit.location}
-    <br />
-    {hit.objectID}
-  </article>
+//   <article>
+// {hit.location}
+// <br />
+// {hit.objectID}
+//   </article>
+<></>
 );
 
 const CustomHits = ({ hits }) => (
@@ -57,7 +58,7 @@ const Search = () => {
     >
       <SearchBox
         autoFocus
-        translations={{ placeholder: 'Search for vehicles...' }}
+        translations={{ placeholder: 'Search for vehicles in locations,renting time' }}
       />
       {query && (
         <div className="container-hit">

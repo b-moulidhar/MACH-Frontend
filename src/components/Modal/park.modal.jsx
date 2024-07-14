@@ -54,7 +54,7 @@ function ParkModal(){
                   }).then(()=>{
                     //console.log(token);
                       
-                        <Navigate to='/homePage'/>
+                        window.location.href ="/homePage"
                       
                   })
             // history.push("/uploadImage");

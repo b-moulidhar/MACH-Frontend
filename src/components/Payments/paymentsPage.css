@@ -8,9 +8,11 @@
     color: rgb(156, 20, 20);
 }
 .allUserUploads{
-    gap: 0.6rem;
+    gap: 0.4rem;
+    justify-content: center;
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 .uploads{

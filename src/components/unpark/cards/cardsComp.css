@@ -6,7 +6,7 @@
     color: green;
 }
 .notAvailable{
-    display: none;
+    
     color: crimson;
 }
 .allUserUploads{
@@ -55,6 +55,11 @@
     background-color: rgba(12, 191, 87, 0.884);
     color: aliceblue;
 }
+.RentNow:disabled {
+    background-color: #cccccc; /* Lighter color for disabled button */
+    color: #666666; /* Faded text color */
+    cursor: allowed; /* Change cursor to not-allowed */
+  }
 #noImage{
     margin: 100px auto;
 }
